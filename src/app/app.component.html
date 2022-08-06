@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="container m-4 p-3 shadow">
+        <h2 class="mt-2">Load Json Data into DB</h2>
+        <button class="mt-2 btn btn-primary" (click)="loadContriesData()" [disabled]="!buttonDisable">Load Contries Data</button>
+        <h4 class="mt-3" style="color: orangered;font-weight: bold;">Total Records {{contriesdata.length}}</h4>
+        <h4 class="mt-2" style="color: green;font-weight: bold;">Stored Records {{totalRecords}}</h4>
+        <h4 class="mt-2" style="color: red;font-weight: bold;">Failed Records {{failedRecords}}</h4>
+        <div class="m-4 p-3" style="height: 400px;overflow-y: auto;" *ngIf="logs.length">
+            <span *ngFor="let log of logs">
+                <span [innerHTML]="log"></span>
+            </span>
+        </div>
+    </div>
+</div>
